@@ -1,0 +1,16 @@
+.mapcnt {
+    width: 100%;
+    height: 90vh;
+}
+
+
+.mapplacesitem {
+    background-color: #fff;
+    color: #111;
+    font-size: 14px;
+}
+
+.mapplacesitem p {
+    font-weight: 800;
+}
+

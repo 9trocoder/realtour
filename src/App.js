@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import { getPlacesData } from "./api";
+import Navbar from "./components/Navbar";
+import Homes from "./components/Homes/Homes";
+import Map from "./components/Map/Map";
 
 function App() {
+  const [places, setPlaces] = useState([]);
+  const [coordinates, setCoordinates] = useState({});
+  const [bounds, setBounds] = useState({});
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    getPlacesData(bounds.sw, bounds.ne).then((data) => {
+      setPlaces(data);
+    });
+  }, [coordinates, bounds]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Homes places={places} />
+      <Map
+        setCoordinates={setCoordinates}
+        setBounds={setBounds}
+        coordinates={coordinates}
+        places={places}
+      />
+    </>
   );
 }
 

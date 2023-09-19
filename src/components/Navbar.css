@@ -1,0 +1,318 @@
+
+
+.navbarcnt-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 70px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbarcnt-top img {
+  width: 90px;
+  object-fit: contain;
+}
+
+.navbarcnt-topright {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbarcnt-reatour {
+  text-decoration: none;
+  color: #222831;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.navbarcnt-topprofile {
+  border: 1px solid #222831;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.navbarcnt-middle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fafafa;
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+.navbarcntwhere {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+}
+
+.navbarcntwhere {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.navbarcntwhere input {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+}
+
+.navbarcntwhere input::placeholder {
+  color: #6666;
+}
+
+.navbarcntsorttop {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.navbarcntsorttop {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbarcntsorttopicon {
+  margin-top: 5px;
+}
+
+.navbarcntsortbottomoverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: #22283177;
+}
+.navbarcntsortbottom {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* background-color: #EEEEEE; */
+  background-color: #fff;
+  max-width: 500px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px 10px;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 11;
+  border-left: 1px solid #eeeeee;
+  animation: dropdownMenuAnimation 0.2s ease-in forwards;
+}
+
+.sorthouse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sorthouseicon {
+  width: 20px;
+}
+
+.sorthouse label {
+  font-size: 11px;
+}
+
+.navbarcntm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 70px;
+  gap: 20px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.navbarrealcontent {
+  display: flex;
+  padding: 20px 70px;
+  gap: 20px;
+  background-color: #fff;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  animation: dropdownMenuAnimation 0.2s ease-in forwards;
+}
+
+.navbarrealcontent-body {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  max-width: 950px;
+  margin: 0 auto;
+  border: 1px solid #eeeeee;
+  padding: 20px 30px;
+  border-radius: 8px;
+  
+}
+
+.navbarcntm-filter {
+  border: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background-color: #fff;
+}
+
+.navbarcntm-filter label {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.navbarcntmleft {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.navbarcntmleft p {
+  font-size: 13px;
+  font-weight: 700;
+  padding-right: 12px;
+  border-right: 1px solid #cfcbcb;
+  margin-right: 12px;
+}
+
+.navbarcnttype {
+  font-size: 13px;
+  padding-right: 20px;
+  font-weight: 400;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border-radius: 999px;
+  background-color: #b3afaf;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 3px;
+  bottom: 0.2em;
+  border-radius: 999px;
+  background-color: white;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.switch input:checked + .slider {
+  background-color: #222831;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(15.5px);
+}
+
+.navbarwhere,
+.navbarcheckin,
+.navbarcheckout,
+.navbarwho {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-right: 1px solid #eeeeee;
+  padding-right: 30px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+
+
+.navbarwhere label,
+.navbarcheckin label,
+.navbarcheckout label,
+.navbarwho label {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.navbarwhere {
+  width: 100%;
+  
+}
+
+.navbarwhere input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.navbarwhere input::placeholder {
+  color: #666666;
+}
+
+
+.checkindate {
+  white-space: nowrap;
+  font-size: 16px;
+  color: #666666;
+}
+
+.navbbutton {
+  background-color: #00ADB5;
+  padding: 10px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+@keyframes dropdownMenuAnimation {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
